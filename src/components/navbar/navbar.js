@@ -1,6 +1,7 @@
 import { Route, Routes, Link } from 'react-router-dom';
 import ProductsComponent from '../products/products.js';
 import ServicesComponent from '../services/service.js';
+import UsersData from '../users/users.js';
 
 function Navbar() {
     return (
@@ -21,6 +22,9 @@ function Navbar() {
                             </li>
                             <li class="nav-item">
                                 <Link class="nav-link" to={"/services"}>Services</Link>
+                            </li>
+                             <li class="nav-item">
+                                <Link class="nav-link" to={"/users"}>Users</Link>
                             </li>
                             {/* <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -48,6 +52,7 @@ function Navbar() {
                 <Route path='/' />
                 <Route path='/products' element={<ProductsComponent />} />
                 <Route path='/services' element={<ServicesComponent />} />
+                <Route path='/users' element={<UsersData />} />
             </Routes>
         </div>
     )
