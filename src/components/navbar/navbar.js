@@ -2,6 +2,9 @@ import { Route, Routes, Link } from 'react-router-dom';
 import ProductsComponent from '../products/products.js';
 import ServicesComponent from '../services/service.js';
 import UsersData from '../users/users.js';
+import FunctionComponent from '../function/function.js';
+import ClassComponent from '../class/class.js';
+
 
 function Navbar() {
     return (
@@ -23,20 +26,20 @@ function Navbar() {
                             <li class="nav-item">
                                 <Link class="nav-link" to={"/services"}>Services</Link>
                             </li>
-                             <li class="nav-item">
+                            <li class="nav-item">
                                 <Link class="nav-link" to={"/users"}>Users</Link>
                             </li>
-                            {/* <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li> */}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li></li>
+                                    <li><Link class="dropdown-item" to={"/function"}>Component 1</Link></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><Link class="dropdown-item" to={"/class"}>Component 2</Link></li>
+                                </ul>
+                            </li>
                             {/* <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li> */}
@@ -53,6 +56,8 @@ function Navbar() {
                 <Route path='/products' element={<ProductsComponent />} />
                 <Route path='/services' element={<ServicesComponent />} />
                 <Route path='/users' element={<UsersData />} />
+                  <Route path='/function' element={<FunctionComponent />} />
+                  <Route path='/class' element={<ClassComponent />} />
             </Routes>
         </div>
     )

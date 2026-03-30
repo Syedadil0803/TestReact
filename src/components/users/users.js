@@ -19,8 +19,9 @@ function UsersData() {
 
     // users = [{},{},{}]
 
-    // console.log("Users Data From db.json", users)
-    // console.log("User Names From db.json", users[0].name)
+    console.log("Users Data From db.json", users)
+    //console.log("User Names From db.json", users[0].name)
+    console.log("User Names From db.json", users.map((user) => user.phone))
 
     return (
         <div>
@@ -28,18 +29,20 @@ function UsersData() {
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
+                    {users.map((data) =>
+                        <tr key={data.id}> 
+                            <th scope="row">{data.id}</th>
+                            <td>{data.name}</td>
+                            <td>{data.email}</td>
+                            <td>{data.phone}</td>
+                        </tr>
+                    )}
                 </tbody>
             </table>
         </div>
