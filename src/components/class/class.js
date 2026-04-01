@@ -4,20 +4,29 @@ class ClassComponent extends React.Component {
 
     constructor() {
         super()
-        this.state = { users: [] }
+        this.state = { users: [], refresh: false }
     }
 
 
     componentDidMount() {
-        console.log("component mounted")
+        // this.interval = setInterval(() => {
+        //     console.log("component mounted")
+        //     this.fetchusers()
+        // }, 3000) // polling - 3 seconds
         this.fetchusers()
+
     }
-    componentDidUpdate() {
+    componentDidUpdate(_, prevState) {
+        if (prevState.refresh !== this.state.refresh) {
+            this.fetchusers()
+        }
+
         console.log("component updated")
-         //  this.fetchusers()
+        //  this.fetchusers()
     }
     componentWillUnmount() {
         console.log("component will unmount")
+        // clearInterval(this.interval)
     }
 
 
@@ -35,9 +44,9 @@ class ClassComponent extends React.Component {
         return (
             <div>
                 <h1>This is Class Component</h1>
-                {/* <button
-                onClick={}
-                >Refresh Data</button> */}
+                <button
+                    onClick={() => this.setState({ refresh: !this.state.refresh })}
+                >Refresh Data</button>
                 <div>
                     <table class="table">
                         <thead>

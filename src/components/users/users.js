@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-
+import FunctionComponent from "../function/function";
 
 
 function UsersData() {
@@ -25,7 +25,7 @@ function UsersData() {
 
     return (
         <div>
-            <table class="table">
+            {/* <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -44,7 +44,9 @@ function UsersData() {
                         </tr>
                     )}
                 </tbody>
-            </table>
+            </table> */}
+
+            <FunctionComponent Listofusers={users} />
         </div>
     )
 }
